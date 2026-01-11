@@ -35,7 +35,7 @@ Example screenshots of Windows 11, Windows 10, and Windows 7.
 
 You can install ttk-text using your preferred package manager.
 
-Since ttk-text is currently unstable, I **strongly recommend installing it in a virtual environment** to avoid version conflicts.
+Since ttk-text is currently unstable, I **strongly recommend installing it in a virtual environment and pinning the exact version** to avoid version conflicts.
 
 ```bash
 # Using pip

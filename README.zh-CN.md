@@ -35,7 +35,7 @@ Windows 11、Windows 10 和 Windows 7 的示例截图。
 
 您可以使用您喜欢的包管理器安装 ttk-text。
 
-由于 ttk-text 目前并不稳定，我强烈建议您**将 ttk-text 安装到虚拟环境中**，避免出现版本冲突。
+由于 ttk-text 目前并不稳定，我强烈建议您**将 ttk-text 安装到虚拟环境中并固定精确版本**，避免出现版本冲突。
 
 ```bash
 # 使用 pip
