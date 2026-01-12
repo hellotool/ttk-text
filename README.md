@@ -1,16 +1,25 @@
+<div align="center">
+
 # Themed Tkinter Text
 
+**Repository:**
+[![GitHub Main Repository](https://img.shields.io/badge/GitHub-Main%20repo-0969da?logo=github)][repository-github]
+[![GitCode Mirror Repository](https://img.shields.io/badge/GitCode-Mirror%20Repo-DA203E?logo=gitcode)][repository-gitcode]
+
+**Language**:
 [简体中文](./README.zh-CN.md) |
 **English** |
 <small>More translations are welcome!</small>
+
+</div>
+
+Themed Tkinter Text widget with modern styling support.
 
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](./CODE_OF_CONDUCT.md)
 [![MIT License](https://img.shields.io/github/license/Jesse205/ttk-text)](./LICENSE)
 [![Testing](https://github.com/Jesse205/ttk-text/actions/workflows/testing.yml/badge.svg)](https://github.com/Jesse205/ttk-text/actions/workflows/testing.yml)
 ![PyPI - Downloads](https://img.shields.io/pypi/dm/ttk-text)
 [![PyPI - Version](https://img.shields.io/pypi/v/ttk-text)](https://pypi.org/project/ttk-text/)
-
-Themed Tkinter Text widget with modern styling support.
 
 ## Features
 
@@ -274,3 +283,6 @@ See [CONTRIBUTING.md](https://github.com/Jesse205/TtkText/blob/main/CONTRIBUTING
 ## License
 
 This project is licensed under the MIT License, see the [LICENSE](./LICENSE) file for details.
+
+[repository-github]: https://github.com/hellotool/ttk-text/
+[repository-gitcode]: https://gitcode.com/hellotool/ttk-text/
