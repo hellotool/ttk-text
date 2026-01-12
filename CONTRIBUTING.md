@@ -25,7 +25,7 @@ This project is managed using uv. For more information about uv, please refer to
 Before writing code, you need to set up the development environment.
 
 1. Install Git and PDM.
-2. Clone the repository locally by running `git clone https://github.com/HelloTool/ttk-text`.
+2. Clone the repository locally by running `git clone https://github.com/hellotool/ttk-text`.
 3. Initialize submodules by running `git submodule update --init --recursive`.
 4. Install dependencies by running `pdm install`.
 

@@ -29,9 +29,9 @@ classifiers = [
 keywords = ["ttk", "ttk-text", "tkinter", "tkinter-text", "tk", "tk-text"]
 
 [project.urls]
-Repository = "https://github.com/HelloTool/ttk-text"
-Tracker = "https://github.com/HelloTool/ttk-text/issues"
-Changelog = "https://github.com/HelloTool/ttk-text/releases"
+Repository = "https://github.com/hellotool/ttk-text"
+Tracker = "https://github.com/hellotool/ttk-text/issues"
+Changelog = "https://github.com/hellotool/ttk-text/releases"
 
 [dependency-groups]
 dev = [
