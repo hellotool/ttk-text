@@ -103,21 +103,21 @@ root.mainloop()
 
 `ThemedText#frame` 的布局如下：
 
-| 列\\行 |   0   |      1       |   2   |
-| :----: | :---: | :----------: | :---: |
-|   0    |       |              |       |
-|   1    |       | `ThemedText` |       |
-|   2    |       |              |       |
+| 索引  |   0   |      1       |   2   |
+| :---: | :---: | :----------: | :---: |
+|   0   |       |              |       |
+|   1   |       | `ThemedText` |       |
+|   2   |       |              |       |
 
 `ScrolledText` 还会添加滚动条和使角落衔接处美观的 Frame。
 
 `ScrolledText#frame` 的布局如下：
 
-| 列\\行 |   0   |                1                 |               2                |
-| :----: | :---: | :------------------------------: | :----------------------------: |
-|   0    |       |                                  |                                |
-|   1    |       |           `ThemedText`           | `Scrollbar(orient="vertical")` |
-|   2    |       | `Scrollbar(orient="horizontal")` |            `Frame`             |
+| 索引  |   0   |                1                 |               2                |
+| :---: | :---: | :------------------------------: | :----------------------------: |
+|   0   |       |                                  |                                |
+|   1   |       |           `ThemedText`           | `Scrollbar(orient="vertical")` |
+|   2   |       | `Scrollbar(orient="horizontal")` |            `Frame`             |
 
 您可以像 `ScrolledText` 一样在 (1, 1) 周围放置其他组件，并调用 `ThemedText#frame.bind_widget()` 来绑定该组件。
 

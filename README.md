@@ -102,21 +102,21 @@ root.mainloop()
 
 Layout of `ThemedText#frame`:
 
-| Column/Row |   0   |      1       |   2   |
-| :--------: | :---: | :----------: | :---: |
-|     0      |       |              |       |
-|     1      |       | `ThemedText` |       |
-|     2      |       |              |       |
+| Index |   0   |      1       |   2   |
+| :---: | :---: | :----------: | :---: |
+|   0   |       |              |       |
+|   1   |       | `ThemedText` |       |
+|   2   |       |              |       |
 
 `ScrolledText` also adds scrollbars and a frame for corner junction aesthetics.
 
 Layout of `ScrolledText#frame`:
 
-| Column/Row |   0   |                1                 |               2                |
-| :--------: | :---: | :------------------------------: | :----------------------------: |
-|     0      |       |                                  |                                |
-|     1      |       |           `ThemedText`           | `Scrollbar(orient="vertical")` |
-|     2      |       | `Scrollbar(orient="horizontal")` |            `Frame`             |
+| Index |   0   |                1                 |               2                |
+| :---: | :---: | :------------------------------: | :----------------------------: |
+|   0   |       |                                  |                                |
+|   1   |       |           `ThemedText`           | `Scrollbar(orient="vertical")` |
+|   2   |       | `Scrollbar(orient="horizontal")` |            `Frame`             |
 
 You can place other components around (1, 1) like with `ScrolledText`, and call `ThemedText#frame.bind_widget()` to bind the component.
 
