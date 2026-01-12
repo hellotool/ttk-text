@@ -3,7 +3,7 @@
 # 主题化 Tkinter 文本控件
 
 **仓库：**
-[![GitHub 主仓库](https://img.shields.io/badge/GitHub-主仓库-0969da?logo=github)][repository-github]
+[![GitHub 主仓库](https://img.shields.io/badge/GitHub-主仓库 -0969da?logo=github)][repository-github]
 [![GitCode 镜像仓库](https://img.shields.io/badge/Gitee-镜像仓库-DA203E?logo=gitcode)][repository-gitcode]
 
 **语言**：
@@ -123,7 +123,7 @@ root.mainloop()
 
 #### 使用 `ThemedTextFrame`
 
-您可以使用 `ThemedTextFrame` 来实现第三方 Text 组件的主体化。
+您可以使用 `ThemedTextFrame` 来实现第三方 Text 组件的主题化。
 
 在添加完毕后，您需要调用 `ThemedText#frame.bind_text()` 来绑定第三方 Text 组件。
 
@@ -156,7 +156,7 @@ root.mainloop()
 
 ### 配置样式
 
-您可以使用 `ThemedText.TEntry` 来配置样式。
+您可以使用样式名 `ThemedText.TEntry` 来配置样式。
 
 | 属性               | 说明                       |
 | ------------------ | -------------------------- |

@@ -155,7 +155,7 @@ root.mainloop()
 
 ### Styling Configuration
 
-You can use `ThemedText.TEntry` to configure styling.
+You can use style name `ThemedText.TEntry` to configure styling.
 
 | Property           | Description                        |
 | ------------------ | ---------------------------------- |
