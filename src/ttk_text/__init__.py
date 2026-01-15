@@ -1,6 +1,8 @@
+from collections.abc import MutableMapping
 from tkinter import Event, EventType, Grid, Misc, Pack, Place, Text
 from tkinter.ttk import Frame, Style
-from typing import Any, Dict, Iterable, NamedTuple, Optional
+from typing import Any, Iterable, NamedTuple, Optional
+from weakref import WeakKeyDictionary
 
 from ttk_text.utils import parse_padding
 
@@ -105,7 +107,7 @@ class ThemedTextFrame(Frame):
         super().__init__(master, **kwargs)
         self.__style = Style(self)
         self.__bound_text: Optional[BoundText] = None
-        self.__bound_widgets: Dict[Misc, BoundWidget] = {}
+        self.__bound_widgets: MutableMapping[Misc, BoundWidget] = WeakKeyDictionary()
         self.__update_stateful_style_task_id: Optional[str] = None
 
         self.bind_widget(self, penetration_state=True)
