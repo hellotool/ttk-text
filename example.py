@@ -104,7 +104,7 @@ def create_scrolled_text_labelframe(parent: Misc):
 
 
 def create_horizontal_scrollable_scrolled_text_labelframe(parent: Misc):
-    frame = LabelFrame(parent, text="ScrolledText(horizontal=True)", width=0, height=0)
+    frame = LabelFrame(parent, text="ScrolledText(horizontal=True)")
     text = ScrolledText(frame, horizontal=True, wrap="none")
     text.pack(fill="both", expand=True, padx="4p", pady="4p")
     if doc := inspect.getdoc(ScrolledText):
