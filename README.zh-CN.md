@@ -3,7 +3,7 @@
 # 主题化 Tkinter 文本控件
 
 **仓库：**
-[![GitHub 主仓库](https://img.shields.io/badge/GitHub-主仓库 -0969da?logo=github)][repository-github]
+[![GitHub 主仓库](https://img.shields.io/badge/GitHub-主仓库-0969da?logo=github)][repository-github]
 [![GitCode 镜像仓库](https://img.shields.io/badge/Gitee-镜像仓库-DA203E?logo=gitcode)][repository-gitcode]
 
 **语言**：
