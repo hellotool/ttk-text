@@ -1,3 +1,4 @@
+from tkinter import Misc
 from tkinter.ttk import Frame, Scrollbar
 from typing import Optional
 
@@ -26,8 +27,8 @@ class ScrolledText(ThemedText):
         corner (Frame): Corner frame for the scrollbars (exists when vertical=True and horizontal=True).
     """
 
-    def __init__(self, master=None, *, vertical=True, horizontal=False, **kw):
-        super().__init__(master, **kw)
+    def __init__(self, master: Optional[Misc] = None, *, vertical: bool = True, horizontal: bool = False, **kwargs):
+        super().__init__(master, **kwargs)
         self.vbar: Optional[Scrollbar] = None
         self.hbar: Optional[Scrollbar] = None
         if vertical:
