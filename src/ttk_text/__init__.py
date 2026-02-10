@@ -281,7 +281,7 @@ class ThemedText(Text):
         :param master: Parent widget (default=None)
         :param style: ttk style name (default='ThemedText.TEntry')
         :param class_: Widget class name (default='ThemedText')
-        :param kw: Additional Text widget configuration options
+        :param kwargs: Additional Text widget configuration options
 
         .. note::
             Extract frame-related configuration from kwargs (class, style, relief, padding, borderwidth),

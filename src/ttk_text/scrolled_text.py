@@ -19,7 +19,7 @@ class ScrolledText(ThemedText):
         master: Parent widget container.
         vertical (bool): Whether to enable the vertical scrollbar (default: True).
         horizontal (bool): Whether to enable the horizontal scrollbar (default: False).
-        **kw: Additional arguments passed to ThemedText.
+        **kwargs: Additional arguments passed to ThemedText.
 
     Attributes:
         vbar (Scrollbar): Vertical scrollbar instance (exists when vertical=True).
