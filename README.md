@@ -31,9 +31,9 @@ Themed Tkinter Text widget with modern styling support.
 ## Screenshots
 
 <div>
-<img src="./doc/images/screenshots/windows11.webp" alt="Windows 11" width="338.7">
-<img src="./doc/images/screenshots/windows10.webp" alt="Windows 10" width="337">
-<img src="./doc/images/screenshots/windows7.webp" alt="Windows 7" width="350.7">
+<img src="./assets/images/screenshots/windows11.webp" alt="Windows 11" width="338.7">
+<img src="./assets/images/screenshots/windows10.webp" alt="Windows 10" width="337">
+<img src="./assets/images/screenshots/windows7.webp" alt="Windows 7" width="350.7">
 </div>
 
 Example screenshots of Windows 11, Windows 10, and Windows 7.
