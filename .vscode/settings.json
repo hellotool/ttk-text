@@ -1,3 +1,9 @@
 {
-    "python.testing.pytestEnabled": true
+    "explorer.fileNesting.patterns": {
+        "pyproject.toml": "uv.lock, .editorconfig, .markdownlint.json, .python-version",
+        "README.md": "README_pypi.md",
+        "*": "${basename}.*.${extname}",
+    },
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true,
 }
