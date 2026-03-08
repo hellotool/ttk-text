@@ -90,7 +90,7 @@ scrolled_text.pack(fill="both", expand=True, padx="7p", pady=(0, "7p"))
 root.mainloop()
 ```
 
-> [!NOTE] Note
+> [!NOTE]
 >
 > Currently, ttk style properties will override attributes you set such as `selectbackground`.
 

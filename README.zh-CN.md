@@ -91,7 +91,7 @@ scrolled_text.pack(fill="both", expand=True, padx="7p", pady=(0, "7p"))
 root.mainloop()
 ```
 
-> [!NOTE] 注意
+> [!NOTE]
 >
 > 目前，ttk style 的属性会覆盖您设置的 `selectbackground` 等属性。
 
