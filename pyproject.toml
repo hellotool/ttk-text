@@ -56,3 +56,6 @@ required-version = ">=0.10.1"
 [tool.ruff]
 line-length = 120
 extend-exclude = ["external-themes/**"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

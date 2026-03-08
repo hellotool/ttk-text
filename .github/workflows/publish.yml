@@ -2,7 +2,8 @@ name: Publish Python Package
 
 on:
   release:
-    types: [ published ]
+    types:
+      - published
 
 jobs:
   pypi-publish:

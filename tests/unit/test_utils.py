@@ -33,10 +33,10 @@ class TestParsePadding:
         assert result5p10p.to_pady() == ("10p", "10p")
 
     def test_parse_string_left_top_right(self):
-        result5p10p15p20p = parse_padding("5p 10p 15p")
-        assert result5p10p15p20p is not None
-        assert result5p10p15p20p.to_padx() == ("5p", "15p")
-        assert result5p10p15p20p.to_pady() == ("10p", "10p")
+        result5p10p15p10p = parse_padding("5p 10p 15p")
+        assert result5p10p15p10p is not None
+        assert result5p10p15p10p.to_padx() == ("5p", "15p")
+        assert result5p10p15p10p.to_pady() == ("10p", "10p")
 
     def test_parse_string_left_top_right_bottom(self):
         result5p10p15p20p = parse_padding("5p 10p 15p 20p")

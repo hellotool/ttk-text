@@ -1,10 +1,19 @@
 name: Testing
 
 on:
-  #  push:
-  #    branches: [ "main" ]
+  push:
+    branches:
+      - "releases/**"
+    paths:
+      - "**.py"
   pull_request:
-    branches: [ "main" ]
+    types:
+      - opened
+      - reopened
+      - edited
+      - synchronize
+    branches:
+      - main
   workflow_dispatch:
 
 permissions:
@@ -16,7 +25,7 @@ jobs:
     runs-on: windows-latest # TODO: Use ubuntu-latest
     strategy:
       matrix:
-        python-version: [ "3.8", "3.9", "3.10", "3.11", "3.12", "3.13", "3.14" ]
+        python-version: ["3.8", "3.9", "3.10", "3.11", "3.12", "3.13", "3.14"]
     steps:
       - uses: actions/checkout@v6
       - name: Install uv and set the Python version
@@ -31,4 +40,3 @@ jobs:
         run: uv sync
       - name: Test with pytest
         run: uv run pytest
-
