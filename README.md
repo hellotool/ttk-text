@@ -3,8 +3,8 @@
 # Themed Tkinter Text
 
 **Repository:**
-[![GitHub Main Repository](https://img.shields.io/badge/GitHub-Main%20repo-0969da?logo=github)][repository-github]
-[![GitCode Mirror Repository](https://img.shields.io/badge/GitCode-Mirror%20Repo-DA203E?logo=gitcode)][repository-gitcode]
+[![GitHub primary repository](https://img.shields.io/badge/GitHub-primary_repo-0969da?logo=github)][repository-github]
+[![GitCode secondary repository](https://img.shields.io/badge/GitCode-secondary_%20_repo-DA203E?logo=gitcode)][repository-gitcode]
 
 **Language**:
 [简体中文](./README.zh-CN.md) |
@@ -90,7 +90,7 @@ scrolled_text.pack(fill="both", expand=True, padx="7p", pady=(0, "7p"))
 root.mainloop()
 ```
 
-> [!NOTE]
+> [!NOTE] Note
 >
 > Currently, ttk style properties will override attributes you set such as `selectbackground`.
 

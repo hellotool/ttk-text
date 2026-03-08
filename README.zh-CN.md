@@ -4,7 +4,7 @@
 
 **仓库：**
 [![GitHub 主仓库](https://img.shields.io/badge/GitHub-主仓库-0969da?logo=github)][repository-github]
-[![GitCode 镜像仓库](https://img.shields.io/badge/Gitee-镜像仓库-DA203E?logo=gitcode)][repository-gitcode]
+[![GitCode 副仓库](https://img.shields.io/badge/Gitee-副仓库-DA203E?logo=gitcode)][repository-gitcode]
 
 **语言**：
 **简体中文** |
@@ -91,7 +91,7 @@ scrolled_text.pack(fill="both", expand=True, padx="7p", pady=(0, "7p"))
 root.mainloop()
 ```
 
-> [!NOTE]
+> [!NOTE] 注意
 >
 > 目前，ttk style 的属性会覆盖您设置的 `selectbackground` 等属性。
 
