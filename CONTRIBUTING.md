@@ -4,7 +4,10 @@ Before contributing, please adhere to the [Code of Conduct](CODE_OF_CONDUCT.md),
 
 ## Submit Issues
 
-WIP
+If you encounter problems during use or have suggestions for improvement, please feel free to submit feedback through any of the following channels:
+
+- [GitHub Issues][issues-github]
+- [GitCode Issues][issues-gitcode]
 
 ## Pull Requests
 
@@ -48,6 +51,9 @@ uv run example.py
 ### Git Commit Standards
 
 Follow [Conventional Commits][conventional-commits].
+
+[issues-github]: https://github.com/hellotool/ttk-text/issues
+[issues-gitcode]: https://gitcode.com/hellotool/ttk-text/issues
 
 [conventional-commits]: https://www.conventionalcommits.org/
 [uv-docs]: https://docs.astral.sh/uv/
