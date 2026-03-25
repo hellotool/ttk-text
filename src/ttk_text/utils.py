@@ -1,3 +1,4 @@
+from collections.abc import Sequence
 from typing import NamedTuple, Optional, Tuple, Union
 
 ScreenDistance = Union[float, str]
@@ -16,17 +17,18 @@ class Padding(NamedTuple):
         return self.top, self.bottom
 
 
-def parse_padding(padding: Union[ScreenDistance, Tuple[ScreenDistance, ...], None]) -> Optional[Padding]:
-    if padding is None:
+def parse_padding(value: Union[ScreenDistance, Tuple[ScreenDistance, ...], None]) -> Optional[Padding]:
+    if value is None:
         return None
-    elif isinstance(padding, int) or isinstance(padding, float):
-        return Padding(padding, padding, padding, padding)
-    elif isinstance(padding, str):
-        padding = tuple(padding.split())
-    if not padding:
-        raise ValueError("Padding must have at least one value")
-    left = padding[0]
-    top = padding[1] if len(padding) >= 2 else left
-    right = padding[2] if len(padding) >= 3 else left
-    bottom = padding[3] if len(padding) >= 4 else top
+
+    if isinstance(value, int) or isinstance(value, float):
+        return Padding(value, value, value, value)
+
+    parts: Sequence[ScreenDistance] = value.split() if isinstance(value, str) else value
+    padding = (*parts, None, None, None, None)
+
+    left = padding[0] if padding[0] is not None else 0
+    top = padding[1] if padding[1] is not None else left
+    right = padding[2] if padding[2] is not None else left
+    bottom = padding[3] if padding[3] is not None else top
     return Padding(left, top, right, bottom)
