@@ -1,10 +1,11 @@
 import inspect
-import os
 import sys
 import tkinter.scrolledtext
-from tkinter import Misc, StringVar, Text, Tk
+from pathlib import Path
+from tkinter import Event, Misc, StringVar, Text, Tk
 from tkinter.font import nametofont
 from tkinter.ttk import Combobox, Entry, Frame, Label, LabelFrame, Sizegrip, Style
+from typing import Dict
 
 from ttk_text import ThemedText, ThemedTextFrame
 from ttk_text.scrolled_text import ScrolledText
@@ -18,15 +19,21 @@ SUN_VALLEY_THEMES = ("sun-valley-light", "sun-valley-dark")
 FOREST_THEMES = ("forest-light", "forest-dark")
 AZURE_THEMES = ("azure-light", "azure-dark")
 
+PATH_FOREST_THEME_DIR = Path("external-themes/forest-ttk-theme")
+PATH_FOREST_THEME_SCRIPT_LIGHT = Path("external-themes/forest-ttk-theme/forest-light.tcl")
+PATH_FOREST_THEME_SCRIPT_DARK = Path("external-themes/forest-ttk-theme/forest-dark.tcl")
+PATH_AZURE_THEME_DIR = Path("external-themes/azure-ttk-theme")
+PATH_AZURE_THEME_SCRIPT = Path("external-themes/azure-ttk-theme/azure.tcl")
 
-def enable_dpi_aware():
+
+def enable_dpi_aware() -> None:
     if sys.platform == "win32":
         from ctypes import windll
 
         windll.user32.SetProcessDPIAware()
 
 
-def fix_sv_ttk(style: Style):
+def fix_sv_ttk(style: Style) -> None:
     if sv_ttk is None:
         return
     # Fix font size in high DPI
@@ -59,7 +66,7 @@ def fix_sv_ttk(style: Style):
         )
 
 
-def fix_forest_ttk(style: Style):
+def fix_forest_ttk(style: Style) -> None:
     if style.theme_use() == "forest-light":
         style.configure(
             "ThemedText.TEntry",
@@ -76,14 +83,14 @@ def fix_forest_ttk(style: Style):
         )
 
 
-def fix_azure_ttk(style: Style):
+def fix_azure_ttk(style: Style) -> None:
     if style.theme_use() == "azure-light":
         style.configure("ThemedText.TEntry", fieldbackground="#ffffff", textpadding=5)
     else:
         style.configure("ThemedText.TEntry", fieldbackground="#333333", textpadding=5)
 
 
-def create_themed_text_labelframe(parent: Misc):
+def create_themed_text_labelframe(parent: Misc) -> LabelFrame:
     frame = LabelFrame(parent, text="ThemedText")
     text = ThemedText(frame)
     text.pack(fill="both", expand=True, padx="4p", pady="4p")
@@ -93,7 +100,7 @@ def create_themed_text_labelframe(parent: Misc):
     return frame
 
 
-def create_scrolled_text_labelframe(parent: Misc):
+def create_scrolled_text_labelframe(parent: Misc) -> LabelFrame:
     frame = LabelFrame(parent, text="ScrolledText")
     text = ScrolledText(frame)
     text.pack(fill="both", expand=True, padx="4p", pady="4p")
@@ -103,7 +110,7 @@ def create_scrolled_text_labelframe(parent: Misc):
     return frame
 
 
-def create_horizontal_scrollable_scrolled_text_labelframe(parent: Misc):
+def create_horizontal_scrollable_scrolled_text_labelframe(parent: Misc) -> LabelFrame:
     frame = LabelFrame(parent, text="ScrolledText(horizontal=True)")
     text = ScrolledText(frame, horizontal=True, wrap="none")
     text.pack(fill="both", expand=True, padx="4p", pady="4p")
@@ -113,7 +120,7 @@ def create_horizontal_scrollable_scrolled_text_labelframe(parent: Misc):
     return frame
 
 
-def create_themed_text_frame_labelframe(parent: Misc):
+def create_themed_text_frame_labelframe(parent: Misc) -> LabelFrame:
     frame = LabelFrame(parent, text="ThemedTextFrame + tkinter.Text")
     text_frame = ThemedTextFrame(frame)
     text_frame.pack(fill="both", expand=True, padx="4p", pady="4p")
@@ -128,7 +135,7 @@ def create_themed_text_frame_labelframe(parent: Misc):
     return frame
 
 
-def create_themed_text_frame_tkinter_scrolledtext_labelframe(parent: Misc):
+def create_themed_text_frame_tkinter_scrolledtext_labelframe(parent: Misc) -> LabelFrame:
     frame = LabelFrame(parent, text="ThemedTextFrame + tkinter.scrolledtext.ScrolledText")
     text_frame = ThemedTextFrame(frame)
     text_frame.pack(fill="both", expand=True, padx="4p", pady="4p")
@@ -143,7 +150,7 @@ def create_themed_text_frame_tkinter_scrolledtext_labelframe(parent: Misc):
     return frame
 
 
-def main():
+def main() -> None:  # noqa: C901, PLR0915
     enable_dpi_aware()
 
     root = Tk()
@@ -161,22 +168,23 @@ def main():
     if sv_ttk:  # Initialize sv themes
         sv_ttk.get_theme()
 
-    lazy_load_themes = {}
-    if os.path.exists("external-themes/forest-ttk-theme/forest-light.tcl"):
-        lazy_load_themes["forest-light"] = "external-themes/forest-ttk-theme/forest-light.tcl"
+    lazy_load_themes: Dict[str, Path] = {}
 
-    if os.path.exists("external-themes/forest-ttk-theme/forest-dark.tcl"):
-        lazy_load_themes["forest-dark"] = "external-themes/forest-ttk-theme/forest-dark.tcl"
+    if PATH_FOREST_THEME_SCRIPT_LIGHT.is_file():
+        lazy_load_themes["forest-light"] = PATH_FOREST_THEME_SCRIPT_LIGHT
 
-    if os.path.exists("external-themes/azure-ttk-theme/azure.tcl"):
-        lazy_load_themes["azure-dark"] = "external-themes/azure-ttk-theme/azure.tcl"
-        lazy_load_themes["azure-light"] = "external-themes/azure-ttk-theme/azure.tcl"
+    if PATH_FOREST_THEME_SCRIPT_DARK.is_file():
+        lazy_load_themes["forest-dark"] = PATH_FOREST_THEME_SCRIPT_DARK
+
+    if PATH_AZURE_THEME_SCRIPT.is_file():
+        lazy_load_themes["azure-dark"] = PATH_AZURE_THEME_SCRIPT
+        lazy_load_themes["azure-light"] = PATH_AZURE_THEME_SCRIPT
 
     theme_variable = StringVar(root, value=style.theme_use())
     theme_names = [*style.theme_names(), *lazy_load_themes.keys()]
     theme_names.sort()
 
-    def on_theme_variable_changed(*_):
+    def on_theme_variable_changed(_: str, __: str, ___: str):
         theme_name = theme_variable.get()
         if theme_name not in style.theme_names() and theme_name in lazy_load_themes:
             root.tk.call("source", lazy_load_themes[theme_name])
@@ -190,7 +198,7 @@ def main():
 
     theme_variable.trace_add("write", on_theme_variable_changed)
 
-    def on_theme_changed(*_):
+    def on_theme_changed(_: Event):
         # Fix theme
         theme_name = style.theme_use()
         if theme_name in SUN_VALLEY_THEMES:

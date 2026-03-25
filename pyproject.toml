@@ -57,5 +57,39 @@ required-version = ">=0.10.1"
 line-length = 120
 extend-exclude = ["external-themes/**"]
 
+[tool.ruff.lint]
+ignore = [
+    "ANN401",  # Any is sometimes unavoidable due to the lack of generics
+    "D100",    # Documentation is not always required
+    "D101",
+    "D102",
+    "D103",
+    "D104",
+    "D107",
+    "FA100",   # No documentation found explaining this behavior
+    "PLC0415", # Imports need to be placed inside functions to prevent compatibility issues or unnecessary code execution
+    "FBT001",  # Named arguments are not required when setting a single value
+    "FBT003",
+    "ICN001",  # Abbreviations often have ambiguous semantics and should be avoided whenever possible
+    "PLR0913", # Having many arguments is not a problem; the problem is having many arguments without using named arguments
+    "PLR2004", # Sometimes, simple length checks or common status codes do not require constants
+    "ANN003",  # Cannot be enforced
+    "ANN202",
+    "ANN204",
+    "COM812",  # May conflict with the formatter
+    "TRY003",  # Not necessary
+    "EM101",
+    "EM102",
+]
+select = ["ALL"]
+exclude = ["tests/**"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "pep257"
+
+[tool.ruff.format]
+docstring-code-format = true
+line-ending = "lf"
+
 [tool.pytest.ini_options]
 testpaths = ["tests"]

@@ -1,16 +1,18 @@
-from collections.abc import MutableMapping
 from tkinter import Event, EventType, Grid, Misc, Pack, Place, Text
 from tkinter.ttk import Frame, Style
-from typing import Any, Iterable, NamedTuple, Optional
+from typing import TYPE_CHECKING, Any, Iterable, NamedTuple, Optional
 from weakref import WeakKeyDictionary
 
 from ttk_text.utils import parse_padding
+
+if TYPE_CHECKING:
+    from collections.abc import MutableMapping
 
 __all__ = ["ThemedText", "ThemedTextFrame"]
 
 _UPDATE_STYLE_ONLY_EVENTS = ("<FocusIn>", "<FocusOut>", "<Enter>", "<Leave>")
 
-_TRANSITION_STATE_EVENTS = _UPDATE_STYLE_ONLY_EVENTS + ("<ButtonPress-1>", "<ButtonRelease-1>")
+_TRANSITION_STATE_EVENTS = (*_UPDATE_STYLE_ONLY_EVENTS, "<ButtonPress-1>", "<ButtonRelease-1>")
 
 
 class BoundText(NamedTuple):
@@ -113,7 +115,7 @@ class ThemedTextFrame(Frame):
         self.bind_widget(self, penetration_state=True)
         self.bind("<<ThemeChanged>>", self.__on_theme_changed, "+")
 
-    def bind_widget(self, widget: Misc, *, penetration_state: bool = False):
+    def bind_widget(self, widget: Misc, *, penetration_state: bool = False) -> None:
         """
         Bind a widget to the frame so its events can trigger style updates.
 
@@ -144,7 +146,7 @@ class ThemedTextFrame(Frame):
 
         widget.bind("<Destroy>", self.__on_bound_widget_destroy, "+")
 
-    def bind_text(self, text: Text, proxy: Optional[Text] = None):
+    def bind_text(self, text: Text, proxy: Optional[Text] = None) -> None:
         """
         Bind a text widget to the frame.
 
@@ -208,13 +210,13 @@ class ThemedTextFrame(Frame):
         # Prevents style updates after widget destruction.
         self.update_style()
 
-    def __lookup(self, option: str, state: Optional[Iterable[str]] = None, default=None) -> Any:
+    def __lookup(self, option: str, state: Optional[Iterable[str]] = None, default: Any = None) -> Any:
         result = self.__style.lookup(self.cget("style"), option, state)
         if not result:  # Avoid ""
             return default
         return result
 
-    def update_style(self):
+    def update_style(self) -> None:
         if self.__bound_text:
             proxy = self.__bound_text.proxy
             proxy.configure(
@@ -307,12 +309,9 @@ class ThemedText(Text):
         self.__copy_geometry_methods()
 
     def __copy_geometry_methods(self):
-        """
-        Copy geometry methods of self.frame without overriding Text methods.
-        """
-
+        """Copy geometry methods of self.frame without overriding Text methods."""
         for m in (vars(Pack).keys() | vars(Grid).keys() | vars(Place).keys()).difference(vars(Text).keys()):
-            if m[0] != "_" and m != "config" and m != "configure":
+            if m[0] != "_" and m not in {"config", "configure"}:
                 setattr(self, m, getattr(self.frame, m))
 
     def __str__(self):

@@ -1,5 +1,7 @@
-from collections.abc import Sequence
-from typing import NamedTuple, Optional, Tuple, Union
+from typing import TYPE_CHECKING, NamedTuple, Optional, Tuple, Union
+
+if TYPE_CHECKING:
+    from collections.abc import Sequence
 
 ScreenDistance = Union[float, str]
 
@@ -21,7 +23,7 @@ def parse_padding(value: Union[ScreenDistance, Tuple[ScreenDistance, ...], None]
     if value is None:
         return None
 
-    if isinstance(value, int) or isinstance(value, float):
+    if isinstance(value, (int, float)):
         return Padding(value, value, value, value)
 
     parts: Sequence[ScreenDistance] = value.split() if isinstance(value, str) else value
