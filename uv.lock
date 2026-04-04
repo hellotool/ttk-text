@@ -288,19 +288,10 @@ wheels = [
 
 [[package]]
 name = "ttk-text"
-version = "0.3.1"
+version = "0.3.2"
 source = { editable = "." }
 
 [package.dev-dependencies]
-dev = [
-    { name = "pyright" },
-    { name = "pytest", version = "8.3.5", source = { registry = "https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple/" }, marker = "python_full_version < '3.9'" },
-    { name = "pytest", version = "8.4.2", source = { registry = "https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple/" }, marker = "python_full_version == '3.9.*'" },
-    { name = "pytest", version = "9.0.2", source = { registry = "https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple/" }, marker = "python_full_version >= '3.10'" },
-    { name = "ruff" },
-    { name = "sv-ttk", version = "2.6.0", source = { registry = "https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple/" }, marker = "python_full_version < '3.9'" },
-    { name = "sv-ttk", version = "2.6.1", source = { registry = "https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple/" }, marker = "python_full_version >= '3.9'" },
-]
 example = [
     { name = "sv-ttk", version = "2.6.0", source = { registry = "https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple/" }, marker = "python_full_version < '3.9'" },
     { name = "sv-ttk", version = "2.6.1", source = { registry = "https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple/" }, marker = "python_full_version >= '3.9'" },
@@ -318,12 +309,6 @@ test = [
 [package.metadata]
 
 [package.metadata.requires-dev]
-dev = [
-    { name = "pyright", specifier = ">=1.1.407" },
-    { name = "pytest", specifier = ">=8.3.4" },
-    { name = "ruff", specifier = ">=0.14.10" },
-    { name = "sv-ttk", specifier = ">=2.6.0" },
-]
 example = [{ name = "sv-ttk", specifier = ">=2.6.0" }]
 lint = [
     { name = "pyright", specifier = ">=1.1.407" },
