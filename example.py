@@ -1,9 +1,9 @@
 import inspect
 import sys
+import tkinter.font
 import tkinter.scrolledtext
 from pathlib import Path
 from tkinter import Event, Misc, StringVar, Text, Tk
-from tkinter.font import nametofont
 from tkinter.ttk import Combobox, Entry, Frame, Label, LabelFrame, Sizegrip, Style
 from typing import Dict
 
@@ -36,11 +36,14 @@ def enable_dpi_aware() -> None:
 def fix_sv_ttk(style: Style) -> None:
     if sv_ttk is None:
         return
+
     # Fix font size in high DPI
-    for name in ("SunValleyBodyFont", "SunValleyCaptionFont"):
-        font = nametofont(name)
-        if font.cget("size") < 0:
-            font.configure(size=-int(font.cget("size") * 0.75))
+    sv_fonts = (tkinter.font.nametofont(name) for name in tkinter.font.names() if name.startswith("SunValley"))
+    for font in sv_fonts:
+        font_size = font.cget("size")
+        if font_size < 0:
+            font.configure(size=int(-font_size * 0.75))
+
     if sv_ttk.get_theme() == "light":
         style.configure("ThemedText.TEntry", fieldbackground="#fdfdfd", textpadding=5)
         style.map(
