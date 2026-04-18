@@ -199,9 +199,6 @@ def fix_sv_ttk(style: Style):
             fieldbackground=[
                 ("hover", "!focus", "#f9f9f9"),
             ],
-            foreground=[
-                ("pressed", style.lookup("TEntry", "foreground")),
-            ]
         )
     else:
         style.configure("ThemedText.TEntry", fieldbackground="#292929", textpadding=5)
@@ -211,9 +208,6 @@ def fix_sv_ttk(style: Style):
                 ("hover", "!focus", "#2f2f2f"),
                 ("focus", "#1c1c1c"),
             ],
-            foreground=[
-                ("pressed", style.lookup("TEntry", "foreground")),
-            ]
         )
 
 
