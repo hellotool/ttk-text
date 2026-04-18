@@ -1,4 +1,4 @@
-from ttk_text.utils import parse_padding
+from ttk_text._utils import parse_padding
 
 
 class TestParsePadding:
@@ -47,7 +47,3 @@ class TestParsePadding:
     def test_parse_none(self):
         result = parse_padding(None)
         assert result is None
-
-    # def test_parse_invalid(self):
-    #     with pytest.raises(ValueError):
-    #         parse_padding("invalid")
