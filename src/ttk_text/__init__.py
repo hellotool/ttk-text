@@ -3,7 +3,7 @@ from tkinter.ttk import Frame, Style
 from typing import TYPE_CHECKING, Any, Iterable, NamedTuple, Optional
 from weakref import WeakKeyDictionary
 
-from ttk_text.utils import parse_padding
+from ttk_text._utils import parse_padding
 
 if TYPE_CHECKING:
     from collections.abc import MutableMapping
@@ -21,10 +21,14 @@ class BoundText(NamedTuple):
 
     :ivar widget: Original widget instance, used to determine which widget's event when receiving events
     :ivar proxy: Text widget instance, which may be the super of the widget or the widget itself
+    :ivar enable_inactive_select: Display selection when the widget is inactive
+    :ivar enable_t_entry_database_compat: Compatibility with tk_setPalette
     """
 
     widget: Text
     proxy: Text
+    enable_inactive_select: bool
+    enable_t_entry_database_compat: bool
 
 
 class BoundWidget(NamedTuple):
@@ -99,13 +103,16 @@ class ThemedTextFrame(Frame):
         :param kwargs: Configuration options passed to Frame
 
         .. note::
-            If style is not specified, "ThemedText.TEntry" will be used.
-            If class_ is not specified, "ThemedText" will be used.
+            - If ``style`` is not specified, "ThemedText.TEntry" will be used.
+            - If ``class_`` is not specified, "ThemedText" will be used.
+            - If ``takefocus`` is not specified, ``takefocus`` will be set to False.
         """
         if not kwargs.get("style"):
             kwargs["style"] = "ThemedText.TEntry"
         if not kwargs.get("class_"):
             kwargs["class_"] = "ThemedText"
+        if "takefocus" not in kwargs:
+            kwargs["takefocus"] = False
         super().__init__(master, **kwargs)
         self.__style = Style(self)
         self.__bound_text: Optional[BoundText] = None
@@ -146,12 +153,21 @@ class ThemedTextFrame(Frame):
 
         widget.bind("<Destroy>", self.__on_bound_widget_destroy, "+")
 
-    def bind_text(self, text: Text, proxy: Optional[Text] = None) -> None:
+    def bind_text(
+        self,
+        text: Text,
+        proxy: Optional[Text] = None,
+        *,
+        enable_inactive_select: bool = True,
+        enable_t_entry_database_compat: bool = True,
+    ) -> None:
         """
         Bind a text widget to the frame.
 
         :param text: Text widget instance
         :param proxy: Optional proxy text (can be a super widget of text)
+        :param enable_inactive_select: Display selection when the widget is inactive
+        :param enable_t_entry_database_compat: Compatibility with tk_setPalette
 
         .. note::
             This method configures the text widget with a flat style (no border or highlight),
@@ -161,7 +177,12 @@ class ThemedTextFrame(Frame):
             proxy = text
         if not proxy.winfo_exists():
             raise ValueError(f"Text widget {proxy} does not exist or has been destroyed")
-        self.__bound_text = BoundText(text, proxy)
+        self.__bound_text = BoundText(
+            text,
+            proxy,
+            enable_inactive_select=enable_inactive_select,
+            enable_t_entry_database_compat=enable_t_entry_database_compat,
+        )
         proxy.configure(
             relief="flat",
             borderwidth=0,
@@ -184,9 +205,9 @@ class ThemedTextFrame(Frame):
             return
         if bound_widget.penetration_state:
             if event.type == EventType.FocusIn:
-                self.state(["focus"])
+                self.state(["focus", "active"])
             elif event.type == EventType.FocusOut:
-                self.state(["!focus"])
+                self.state(["!focus", "active"])
             elif event.type == EventType.Enter:
                 self.state(["hover"])
             elif event.type == EventType.Leave:
@@ -199,10 +220,7 @@ class ThemedTextFrame(Frame):
         self.__handle_style_update(event)
 
     def __handle_style_update(self, _: Event):
-        if self.__update_stateful_style_task_id is not None:
-            self.after_cancel(self.__update_stateful_style_task_id)
-        # noinspection PyTypeChecker
-        self.__update_stateful_style_task_id = self.after_idle(self.__update_stateful_style)
+        self.__update_stateful_style_debounce()
 
     def __on_theme_changed(self, event: Event):
         if event.widget != self:
@@ -210,21 +228,23 @@ class ThemedTextFrame(Frame):
         # Prevents style updates after widget destruction.
         self.update_style()
 
-    def __lookup(self, option: str, state: Optional[Iterable[str]] = None, default: Any = None) -> Any:
+    def __lookup(self, option: str, *, state: Optional[Iterable[str]] = None, default: Any = None) -> Any:
         result = self.__style.lookup(self.cget("style"), option, state)
         if not result:  # Avoid ""
             return default
         return result
 
     def update_style(self) -> None:
-        if self.__bound_text:
-            proxy = self.__bound_text.proxy
+        if bound_text := self.__bound_text:
+            proxy = bound_text.proxy
             proxy.configure(
                 selectbackground=self.__lookup("selectbackground", state=["focus"]),
-                selectforeground=self.__lookup("selectforeground", state=["focus"]),
                 insertwidth=self.__lookup("insertwidth", state=["focus"], default=1),
                 font=self.__lookup("font", default="TkDefaultFont"),
             )
+            if bound_text.enable_inactive_select:
+                proxy.configure(inactiveselectbackground=self.__lookup("selectbackground"))
+
             if text_padding := parse_padding(self.__lookup("textpadding")):
                 proxy.grid(padx=text_padding.to_padx(), pady=text_padding.to_pady())
             else:
@@ -235,6 +255,11 @@ class ThemedTextFrame(Frame):
         )
         self.__update_stateful_style()
 
+    def __update_stateful_style_debounce(self):
+        if self.__update_stateful_style_task_id is not None:
+            self.after_cancel(self.__update_stateful_style_task_id)
+        self.__update_stateful_style_task_id = self.after_idle(self.__update_stateful_style)
+
     def __update_stateful_style(self):
         if self.__update_stateful_style_task_id is not None:
             self.after_cancel(self.__update_stateful_style_task_id)
@@ -242,8 +267,10 @@ class ThemedTextFrame(Frame):
         if self.__bound_text:
             state = self.state()
             self.__bound_text.proxy.configure(
-                background=self.__lookup("fieldbackground", state),
-                foreground=self.__lookup("foreground", state),
+                background=self.__lookup("fieldbackground", state=state),
+                foreground=self.option_get("foreground", "TEntry")  # Compatible with tk_setPalette
+                or self.__lookup("foreground", state=state),
+                selectforeground=self.__lookup("selectforeground", state=state),
             )
 
 
@@ -276,13 +303,22 @@ class ThemedText(Text):
         ThemedText → tkinter.Text → tkinter.Widget → tkinter.BaseWidget → object
     """
 
-    def __init__(self, master: Optional[Misc] = None, **kwargs):
+    def __init__(
+        self,
+        master: Optional[Misc] = None,
+        *,
+        enable_inactive_select: bool = True,
+        enable_t_entry_database_compat: bool = True,
+        **kwargs,
+    ):
         """
         Initialize a themed text widget.
 
         :param master: Parent widget (default=None)
         :param style: ttk style name (default='ThemedText.TEntry')
         :param class_: Widget class name (default='ThemedText')
+        :param enable_inactive_select: Display selection when the widget is inactive
+        :param enable_t_entry_database_compat: Compatibility with tk_setPalette
         :param kwargs: Additional Text widget configuration options
 
         .. note::
@@ -305,7 +341,12 @@ class ThemedText(Text):
 
         # Use super() as a proxy to ensure direct calls to Text base class methods
         # Bypass methods that may be overridden in ThemedText (e.g., grid/configure)
-        self.frame.bind_text(self, super())
+        self.frame.bind_text(
+            self,
+            super(),
+            enable_inactive_select=enable_inactive_select,
+            enable_t_entry_database_compat=enable_t_entry_database_compat,
+        )
         self.__copy_geometry_methods()
 
     def __copy_geometry_methods(self):
