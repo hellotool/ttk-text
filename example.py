@@ -51,9 +51,6 @@ def fix_sv_ttk(style: Style) -> None:
             fieldbackground=[
                 ("hover", "!focus", "#f9f9f9"),
             ],
-            foreground=[
-                ("pressed", style.lookup("TEntry", "foreground")),
-            ],
         )
     else:
         style.configure("ThemedText.TEntry", fieldbackground="#292929", textpadding=5)
@@ -62,9 +59,6 @@ def fix_sv_ttk(style: Style) -> None:
             fieldbackground=[
                 ("hover", "!focus", "#2f2f2f"),
                 ("focus", "#1c1c1c"),
-            ],
-            foreground=[
-                ("pressed", style.lookup("TEntry", "foreground")),
             ],
         )
 
@@ -201,7 +195,9 @@ def main() -> None:  # noqa: C901, PLR0915
 
     theme_variable.trace_add("write", on_theme_variable_changed)
 
-    def on_theme_changed(_: Event):
+    def on_theme_changed(event: Event):
+        if event.widget != root:
+            return
         # Fix theme
         theme_name = style.theme_use()
         if theme_name in SUN_VALLEY_THEMES:
@@ -211,7 +207,7 @@ def main() -> None:  # noqa: C901, PLR0915
         elif theme_name in AZURE_THEMES:
             fix_azure_ttk(style)
 
-    root.bind("<<ThemeChanged>>", on_theme_changed)
+    root.bind("<<ThemeChanged>>", on_theme_changed, add=True)
 
     sizegrip = Sizegrip(root)
     sizegrip.place(relx=1, rely=1, anchor="se", bordermode="outside")
