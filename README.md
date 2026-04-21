@@ -17,7 +17,8 @@ Themed Tkinter Text widget with modern styling support.
 
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-3.0-4baaaa.svg)](./CODE_OF_CONDUCT.md)
 [![MIT License](https://img.shields.io/github/license/hellotool/ttk-text)](./LICENSE)
-[![Testing](https://github.com/hellotool/ttk-text/actions/workflows/testing.yml/badge.svg)](https://github.com/hellotool/ttk-text/actions/workflows/testing.yml)
+
+[![GitHub - Test](https://github.com/hellotool/ttk-text/actions/workflows/test.yml/badge.svg)](https://github.com/hellotool/ttk-text/actions/workflows/test.yml)
 ![PyPI - Downloads](https://img.shields.io/pypi/dm/ttk-text)
 [![PyPI - Version](https://img.shields.io/pypi/v/ttk-text)](https://pypi.org/project/ttk-text/)
 

@@ -16,10 +16,11 @@
 支持现代主题样式的 Tkinter Text 组件。
 
 [![贡献者公约](https://img.shields.io/badge/贡献者公约-3.0-4baaaa.svg)](./CODE_OF_CONDUCT.zh-CN.md)
-[![MIT License](https://img.shields.io/github/license/hellotool/ttk-text?label=%E8%AE%B8%E5%8F%AF%E8%AF%81)](./LICENSE)
-[![Testing](https://github.com/hellotool/ttk-text/actions/workflows/testing.yml/badge.svg)](https://github.com/hellotool/ttk-text/actions/workflows/testing.yml)
-![PyPI - Downloads](https://img.shields.io/pypi/dm/ttk-text?label=%E4%B8%8B%E8%BD%BD%E9%87%8F)
-[![PyPI - Version](https://img.shields.io/pypi/v/ttk-text)](https://pypi.org/project/ttk-text/)
+[![MIT License](https://img.shields.io/github/license/hellotool/ttk-text?label=许可证)](./LICENSE)
+
+[![GitHub - 测试](https://github.com/hellotool/ttk-text/actions/workflows/test.yml/badge.svg)](https://github.com/hellotool/ttk-text/actions/workflows/test.yml)
+![PyPI - 下载量](https://img.shields.io/pypi/dm/ttk-text?label=下载量)
+[![PyPI - 版本](https://img.shields.io/pypi/v/ttk-text)](https://pypi.org/project/ttk-text/)
 
 ## 特性
 
