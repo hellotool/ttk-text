@@ -343,11 +343,15 @@ class ThemedText(Text):
         # Bypass methods that may be overridden in ThemedText (e.g., grid/configure)
         self.frame.bind_text(
             self,
-            super(),
+            ThemedText.text_proxy(self),
             enable_inactive_select=enable_inactive_select,
             enable_t_entry_database_compat=enable_t_entry_database_compat,
         )
         self.__copy_geometry_methods()
+
+    def text_proxy(self) -> Text:
+        """Return the proxy of internal Text widget object."""
+        return super()
 
     def __copy_geometry_methods(self):
         """Copy geometry methods of self.frame without overriding Text methods."""
