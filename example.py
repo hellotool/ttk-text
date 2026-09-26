@@ -7,8 +7,7 @@ from tkinter import Event, Misc, StringVar, Text, Tk
 from tkinter.ttk import Combobox, Entry, Frame, Label, LabelFrame, Sizegrip, Style
 from typing import Dict
 
-from ttk_text import ThemedText, ThemedTextFrame
-from ttk_text.scrolled_text import ScrolledText
+from ttk_text import ScrolledText, ThemedText, ThemedTextFrame
 
 try:
     import sv_ttk

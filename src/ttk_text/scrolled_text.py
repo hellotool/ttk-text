@@ -2,7 +2,7 @@ from tkinter import Misc
 from tkinter.ttk import Frame, Scrollbar
 from typing import Optional
 
-from ttk_text import ThemedText
+from ttk_text.text import ThemedText
 
 __all__ = ["ScrolledText"]
 

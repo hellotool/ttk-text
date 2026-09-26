@@ -43,63 +43,21 @@ test = [
     "pytest>=9.0.3; python_version >= '3.10'",
 ]
 example = ["sv-ttk>=2.6.0"]
-lint = ["pyright>=1.1.409", "ruff>=0.15.13"]
+lint = ["pyright>=1.1.414", "ruff>=0.16.9"]
+docs = ["rumdl>=0.2.77; python_version >= '3.9'"]
 dev = [
     { include-group = "lint" },
     { include-group = "example" },
     { include-group = "test" },
+    { include-group = "docs" },
 ]
 
 [build-system]
-requires = ["uv_build>=0.11.3,<0.12"]
+requires = ["uv_build>=0.12.19,<0.13"]
 build-backend = "uv_build"
 
 [tool.uv]
 required-version = ">=0.10.1"
-
-[tool.ruff]
-line-length = 120
-include = [
-    "pyproject.toml",
-    # "*.md",
-    # "docs/**/*.md",
-    "src/**/*.py",
-    "tests/**/*.py",
-]
-
-[tool.ruff.lint]
-ignore = [
-    "ANN401",  # Any is sometimes unavoidable due to the lack of generics
-    "D100",    # Documentation is not always required
-    "D101",
-    "D102",
-    "D103",
-    "D104",
-    "D107",
-    "FA100",   # No documentation found explaining this behavior
-    "PLC0415", # Imports need to be placed inside functions to prevent compatibility issues or unnecessary code execution
-    "FBT001",  # Named arguments are not required when setting a single value
-    "FBT003",
-    "ICN001",  # Abbreviations often have ambiguous semantics and should be avoided whenever possible
-    "PLR0913", # Having many arguments is not a problem; the problem is having many arguments without using named arguments
-    "PLR2004", # Sometimes, simple length checks or common status codes do not require constants
-    "ANN003",  # Cannot be enforced
-    "ANN202",
-    "ANN204",
-    "COM812",  # May conflict with the formatter
-    "TRY003",  # Not necessary
-    "EM101",
-    "EM102",
-]
-select = ["ALL"]
-exclude = ["tests/**"]
-
-[tool.ruff.lint.pydocstyle]
-convention = "pep257"
-
-[tool.ruff.format]
-docstring-code-format = true
-line-ending = "lf"
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
