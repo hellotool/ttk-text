@@ -2,7 +2,6 @@
 
 # Themed Tkinter Text
 
-![Contributor Covenant 2.1](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)
 ![MIT License](https://img.shields.io/pypi/l/ttk-text)
 
 Themed Tkinter Text widget with modern styling support.

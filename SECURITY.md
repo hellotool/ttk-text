@@ -6,8 +6,7 @@
 > [!WARNING]
 >
 > **THIS PROJECT IS PROVIDED "AS IS", WITHOUT ANY SECURITY GUARANTEES. ALL RISKS ASSOCIATED WITH USING THIS SOFTWARE ARE ASSUMED BY YOU.**
->
-> To reduce maintenance costs, this project **IS NOT RESPONSIBLE FOR ANY SECURITY VULNERABILITIES**. You should assess the risks yourself and decide whether to use it.
+> To reduce maintenance costs, this project **DOES NOT PROMISE** any response time. You should assess the risks yourself and decide whether to use it.
 
 ## Reporting a Vulnerability
 
@@ -26,7 +25,7 @@ If you discover a security vulnerability, you can report it through the followin
 2. Fill in the vulnerability details as requested.
 3. Click **Submit issue**.
 
-### Channel 3: Via Email (Not Recommended)
+### Channel 3: Via Email
 
 - **Email**: [jesse205@qq.com](mailto:jesse205@qq.com)
 - **Subject Suggestion**: `[SECURITY] Brief description of the vulnerability`

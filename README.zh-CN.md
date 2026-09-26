@@ -15,8 +15,8 @@
 
 支持现代主题样式的 Tkinter Text 组件。
 
-[![贡献者公约](https://img.shields.io/badge/贡献者公约-3.0-4baaaa.svg)](./CODE_OF_CONDUCT.zh-CN.md)
-[![MIT License](https://img.shields.io/github/license/hellotool/ttk-text?label=许可证)](./LICENSE)
+[![MIT 许可证](https://img.shields.io/github/license/hellotool/ttk-text?label=许可证)](./LICENSE)
+[![贡献者公约 3.0](https://img.shields.io/badge/贡献者公约-3.0-4baaaa.svg)](./CODE_OF_CONDUCT.zh-CN.md)
 
 [![GitHub - 测试](https://github.com/hellotool/ttk-text/actions/workflows/test.yml/badge.svg)](https://github.com/hellotool/ttk-text/actions/workflows/test.yml)
 ![PyPI - 下载量](https://img.shields.io/pypi/dm/ttk-text?label=下载量)
