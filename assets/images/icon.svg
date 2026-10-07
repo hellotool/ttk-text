@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+    width="48"
+    height="48"
+    viewBox="0 0 48 48"
+    version="1.1"
+    id="svg1"
+    inkscape:version="1.4.4 (dcaf3e7, 2026-05-05)"
+    sodipodi:docname="icon.svg"
+    inkscape:export-filename=".\output\icon.svg"
+    inkscape:export-xdpi="96"
+    inkscape:export-ydpi="96"
+    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:svg="http://www.w3.org/2000/svg">
+    <sodipodi:namedview
+        id="namedview1"
+        pagecolor="#ffffff"
+        bordercolor="#000000"
+        borderopacity="0.25"
+        inkscape:showpageshadow="2"
+        inkscape:pageopacity="0.0"
+        inkscape:pagecheckerboard="0"
+        inkscape:deskcolor="#d1d1d1"
+        inkscape:document-units="px"
+        showgrid="true"
+        inkscape:current-layer="layer1">
+        <inkscape:grid
+            id="grid1"
+            units="px"
+            originx="0"
+            originy="0"
+            spacingx="1"
+            spacingy="1"
+            empcolor="#0099e5"
+            empopacity="0.30196078"
+            color="#0099e5"
+            opacity="0.14901961"
+            empspacing="6"
+            enabled="true"
+            visible="true" />
+        <inkscape:page
+            x="0"
+            y="0"
+            width="48"
+            height="48"
+            id="page2"
+            margin="0"
+            bleed="0" />
+    </sodipodi:namedview>
+    <defs id="defs1">
+        <inkscape:path-effect
+            effect="fillet_chamfer"
+            id="path-effect7"
+            is_visible="true"
+            lpeversion="1"
+            nodesatellites_param="F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,3.9912756,0,1 @ F,0,0,1,0,4,0,1"
+            radius="1"
+            unit="px"
+            method="auto"
+            mode="F"
+            chamfer_steps="1"
+            flexible="false"
+            use_knot_distance="true"
+            apply_no_radius="true"
+            apply_with_radius="true"
+            only_selected="false"
+            hide_knots="false" />
+        <clipPath
+            clipPathUnits="userSpaceOnUse"
+            id="clipPath7">
+            <path
+                style="fill:#242424;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
+                id="path7"
+                width="46"
+                height="4"
+                x="1"
+                y="39"
+                ry="0"
+                inkscape:path-effect="#path-effect7"
+                sodipodi:type="rect"
+                d="m 1,39 h 46 v 0.0087 A 3.9912756,3.9912756 135 0 1 43.008724,43 H 5 A 4,4 45 0 1 1,39 Z"
+                inkscape:label="acive-identifier-mask" />
+        </clipPath>
+    </defs>
+    <g
+        inkscape:label="图层 1"
+        inkscape:groupmode="layer"
+        id="layer1">
+        <rect
+            style="fill:#ffffff;fill-opacity:1;stroke:#d1d1d1;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
+            id="rect1"
+            width="44"
+            height="36"
+            x="2"
+            y="6"
+            rx="3"
+            ry="3"
+            inkscape:label="background" />
+        <g
+            id="g7"
+            inkscape:groupmode="maskhelper"
+            clip-path="url(#clipPath7)">
+            <rect
+                style="fill:#0f6cbd;fill-opacity:1;stroke:none;stroke-width:2.82922;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                id="rect2"
+                width="46"
+                height="2"
+                x="1"
+                y="41"
+                inkscape:label="acive-identifier" />
+        </g>
+        <g
+            id="text2"
+            style="font-size:12px;font-family:'Source Han Sans SC';-inkscape-font-specification:'Source Han Sans SC';fill:#0f6cbd;stroke-width:2;paint-order:stroke fill markers"
+            inkscape:label="text"
+            aria-label="ttk&#10;text">
+            <path
+                style="font-family:'JetBrains Mono';-inkscape-font-specification:'JetBrains Mono';fill:#242424"
+                d="m 10.695989,19.759995 q -0.8159996,0 -1.3079996,-0.468 -0.492,-0.48 -0.492,-1.272 v -3.876 h -1.896 v -0.984 h 1.896 v -1.86 h 1.08 v 1.86 h 2.6999996 v 0.984 H 9.9759894 v 3.876 q 0,0.336 0.1919996,0.552 0.204,0.204 0.528,0.204 h 1.92 v 0.984 z m 7.200005,0 q -0.816,0 -1.308,-0.468 -0.492,-0.48 -0.492,-1.272 v -3.876 h -1.896 v -0.984 h 1.896 v -1.86 h 1.08 v 1.86 h 2.7 v 0.984 h -2.7 v 3.876 q 0,0.336 0.192,0.552 0.204,0.204 0.528,0.204 h 1.92 v 0.984 z m 4.104005,0 v -8.76 h 1.08 v 4.884 h 1.26 l 1.848,-2.724 h 1.236 l -2.124,3.144 2.244,3.456 h -1.26 l -1.92,-2.94 h -1.284 v 2.94 z"
+                id="path8" />
+            <path
+                style="font-family:'JetBrains Mono';-inkscape-font-specification:'JetBrains Mono';fill:#242424"
+                d="m 10.695989,36.047267 q -0.8159996,0 -1.3079996,-0.468 -0.492,-0.48 -0.492,-1.272 v -3.876 h -1.896 v -0.984 h 1.896 v -1.86 h 1.08 v 1.86 h 2.6999996 v 0.984 H 9.9759894 v 3.876 q 0,0.336 0.1919996,0.552 0.204,0.204 0.528,0.204 h 1.92 v 0.984 z m 6.540005,0.12 q -1.164,0 -1.884,-0.696 -0.708,-0.708 -0.708,-1.944 v -1.56 q 0,-1.236 0.708,-1.932 0.72,-0.708 1.884,-0.708 0.78,0 1.356,0.312 0.588,0.312 0.912,0.876 0.324,0.564 0.324,1.332 v 1.176 h -4.128 v 0.624 q 0,0.732 0.42,1.164 0.42,0.42 1.116,0.42 0.6,0 0.984,-0.228 0.396,-0.24 0.48,-0.636 h 1.08 q -0.108,0.828 -0.804,1.32 -0.696,0.48 -1.74,0.48 z m -1.536,-3.984 h 3.072 v -0.336 q 0,-0.78 -0.408,-1.2 -0.396,-0.432 -1.128,-0.432 -0.732,0 -1.14,0.432 -0.396,0.42 -0.396,1.2 z m 5.736005,3.864 2.34,-3.396 -2.196,-3.204 h 1.272 l 1.308,2.04 q 0.084,0.132 0.156,0.288 0.084,0.156 0.132,0.252 0.036,-0.096 0.108,-0.252 0.084,-0.156 0.168,-0.288 l 1.308,-2.04 h 1.272 l -2.196,3.216 2.328,3.384 h -1.272 l -1.416,-2.16 q -0.084,-0.132 -0.168,-0.3 -0.072,-0.18 -0.132,-0.288 -0.048,0.108 -0.144,0.288 -0.084,0.168 -0.18,0.3 l -1.416,2.16 z m 10.860004,0 q -0.816,0 -1.308,-0.468 -0.492,-0.48 -0.492,-1.272 v -3.876 h -1.896 v -0.984 h 1.896 v -1.86 h 1.08 v 1.86 h 2.7 v 0.984 h -2.7 v 3.876 q 0,0.336 0.192,0.552 0.204,0.204 0.528,0.204 h 1.92 v 0.984 z"
+                id="path9" />
+        </g>
+        <rect
+            style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:2.08893;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+            id="rect3"
+            width="2"
+            height="12"
+            x="37"
+            y="27"
+            inkscape:label="cursor" />
+    </g>
+</svg>

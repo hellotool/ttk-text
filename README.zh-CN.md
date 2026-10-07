@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src="./assets/images/icon.svg" width="192" height="192" alt="ttk-text icon" />
+
 # 主题化 Tkinter 文本控件
 
 **仓库：**
