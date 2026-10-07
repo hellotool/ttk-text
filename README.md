@@ -6,7 +6,7 @@
 
 **Repository:**
 [![GitHub primary repository](https://img.shields.io/badge/GitHub-primary_repo-0969da?logo=github)][repository-github]
-[![GitCode secondary repository](https://img.shields.io/badge/GitCode-secondary_%20_repo-DA203E?logo=gitcode)][repository-gitcode]
+[![AtomGit secondary repository](https://img.shields.io/badge/AtomGit-secondary_%20_repo-DA203E?logo=gitcode)][repository-gitcode]
 
 **Language**:
 [简体中文](./README.zh-CN.md) |
