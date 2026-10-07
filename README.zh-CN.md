@@ -6,7 +6,7 @@
 
 **仓库：**
 [![GitHub 主仓库](https://img.shields.io/badge/GitHub-主仓库-0969da?logo=github)][repository-github]
-[![GitCode 副仓库](https://img.shields.io/badge/Gitee-副仓库-DA203E?logo=gitcode)][repository-gitcode]
+[![AtomGit 副仓库](https://img.shields.io/badge/AtomGit-副仓库-DA203E?logo=gitcode)][repository-gitcode]
 
 **语言**：
 **简体中文** |
