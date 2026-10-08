@@ -19,9 +19,9 @@ If you discover a security vulnerability, you can report it through the followin
 3. Fill in the vulnerability details as requested.
 4. Click **Create draft security advisory**.
 
-### Channel 2: Via GitCode Private Issue
+### Channel 2: Via AtomGit Private Issue
 
-1. Visit <https://gitcode.com/hellotool/ttk-text/issues/create?type=security>.
+1. Visit <https://atomgit.com/hellotool/ttk-text/issues/create?type=security>.
 2. Fill in the vulnerability details as requested.
 3. Click **Submit issue**.
 

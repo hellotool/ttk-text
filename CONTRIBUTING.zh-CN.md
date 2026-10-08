@@ -24,7 +24,7 @@
 如果您在使用中遇到问题或有改进建议，欢迎通过以下任一渠道提交反馈：
 
 - [GitHub Issues][issues-github]
-- [GitCode Issues][issues-gitcode]
+- [AtomGit Issues][issues-atomgit]
 
 ### 参与开发
 
@@ -95,7 +95,7 @@ uv run example.py
 遵循 [约定式提交][conventionalcommits-homepage]。
 
 [issues-github]: https://github.com/hellotool/ttk-text/issues
-[issues-gitcode]: https://gitcode.com/hellotool/ttk-text/issues
+[issues-atomgit]: https://atomgit.com/hellotool/ttk-text/issues
 
 [markdownlint-repository-github]: https://github.com/DavidAnson/markdownlint
 [conventionalcommits-homepage]: https://www.conventionalcommits.org/zh-hans/v1.0.0/

@@ -6,7 +6,7 @@
 
 **Repository:**
 [![GitHub primary repository](https://img.shields.io/badge/GitHub-primary_repo-0969da?logo=github)][repository-github]
-[![AtomGit secondary repository](https://img.shields.io/badge/AtomGit-secondary_%20_repo-DA203E?logo=gitcode)][repository-gitcode]
+[![AtomGit secondary repository](https://img.shields.io/badge/AtomGit-secondary_%20_repo-DA203E?logo=atomgit)][repository-atomgit]
 
 **Language**:
 [简体中文](./README.zh-CN.md) |
@@ -288,4 +288,4 @@ See [Contribution Guidelines](./CONTRIBUTING.md) for details.
 This project is licensed under the MIT License, see the [LICENSE](./LICENSE) file for details.
 
 [repository-github]: https://github.com/hellotool/ttk-text/
-[repository-gitcode]: https://gitcode.com/hellotool/ttk-text/
+[repository-atomgit]: https://atomgit.com/hellotool/ttk-text/

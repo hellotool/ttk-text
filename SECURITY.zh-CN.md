@@ -20,9 +20,9 @@
 3. 按照要求填写漏洞信息。
 4. 点击 **Create draft security advisory**。
 
-### 渠道二：通过 GitCode 私密 issue
+### 渠道二：通过 AtomGit 私密 issue
 
-1. 访问 <https://gitcode.com/hellotool/ttk-text/issues/create?type=security>。
+1. 访问 <https://atomgit.com/hellotool/ttk-text/issues/create?type=security>。
 2. 按照要求填写漏洞信息。
 3. 点击 **提交 issue**。
 

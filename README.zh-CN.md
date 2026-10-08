@@ -6,7 +6,7 @@
 
 **仓库：**
 [![GitHub 主仓库](https://img.shields.io/badge/GitHub-主仓库-0969da?logo=github)][repository-github]
-[![AtomGit 副仓库](https://img.shields.io/badge/AtomGit-副仓库-DA203E?logo=gitcode)][repository-gitcode]
+[![AtomGit 副仓库](https://img.shields.io/badge/AtomGit-副仓库-DA203E?logo=atomgit)][repository-atomgit]
 
 **语言**：
 **简体中文** |
@@ -289,4 +289,4 @@ app.mainloop()
 本项目使用 MIT 许可证，查看 [LICENSE](./LICENSE) 了解更多信息。
 
 [repository-github]: https://github.com/hellotool/ttk-text/
-[repository-gitcode]: https://gitcode.com/hellotool/ttk-text/
+[repository-atomgit]: https://atomgit.com/hellotool/ttk-text/

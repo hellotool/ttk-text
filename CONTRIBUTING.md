@@ -24,7 +24,7 @@ When participating in this project, please adhere to our [Contributor Covenant C
 If you encounter problems during use or have suggestions for improvement, please feel free to submit feedback through any of the following channels:
 
 - [GitHub Issues][issues-github]
-- [GitCode Issues][issues-gitcode]
+- [AtomGit Issues][issues-atomgit]
 
 ### Participating in Development
 
@@ -95,7 +95,7 @@ For more details, please refer to `.editorconfig`.
 Follow [Conventional Commits][conventionalcommits-homepage].
 
 [issues-github]: https://github.com/hellotool/ttk-text/issues
-[issues-gitcode]: https://gitcode.com/hellotool/ttk-text/issues
+[issues-atomgit]: https://atomgit.com/hellotool/ttk-text/issues
 
 [markdownlint-repository-github]: https://github.com/DavidAnson/markdownlint
 [conventionalcommits-homepage]: https://www.conventionalcommits.org/en/v1.0.0/
