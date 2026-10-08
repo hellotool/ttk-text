@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="./assets/images/icon.svg" width="192" height="192" alt="ttk-text icon" />
+<img src="./assets/images/icon.svg" width="192" height="192" alt="ttk-text 标志" />
 
 # 主题化 Tkinter 文本控件
 
@@ -279,6 +279,8 @@ app.mainloop()
 本项目灵感源自 [Git GUI](https://github.com/j6t/git-gui) 的原生主题技术。
 
 此为独立的 Python 实现，未包含任何 GPL 许可代码。
+
+ttk-text 标志使用的 JetBrains Mono 字体，版权归 JetBrains 所有，遵循 [SIL Open Font License 1.1](https://github.com/JetBrains/JetBrainsMono/blob/master/OFL.txt) 许可证。
 
 ## 参与贡献
 

@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="./assets/images/icon.svg" width="192" height="192" alt="ttk-text icon" />
+<img src="./assets/images/icon.svg" width="192" height="192" alt="ttk-text logo" />
 
 # Themed Tkinter Text
 
@@ -278,6 +278,8 @@ app.mainloop()
 This project is inspired by [Git GUI](https://github.com/j6t/git-gui)'s native-theming technique.
 
 This is an independent Python implementation; no GPL-licensed code is included.
+
+The JetBrains Mono font used in the ttk-text logo is copyrighted by JetBrains and licensed under the [SIL Open Font License 1.1](https://github.com/JetBrains/JetBrainsMono/blob/master/OFL.txt).
 
 ## Contributing
 
