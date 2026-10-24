@@ -110,7 +110,7 @@
          inkscape:path-effect="#path-effect7"
          sodipodi:type="rect"
          d="m 1,39 h 46 v 0.0087 A 3.9912756,3.9912756 135 0 1 43.008724,43 H 5 A 4,4 45 0 1 1,39 Z"
-         inkscape:label="acive-identifier-mask" />
+         inkscape:label="active-identifier-mask" />
     </clipPath>
   </defs>
   <g
@@ -140,7 +140,7 @@
          height="2"
          x="1"
          y="41"
-         inkscape:label="acive-identifier" />
+         inkscape:label="active-identifier" />
     </g>
     <rect
        style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.53741;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
