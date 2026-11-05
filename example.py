@@ -18,11 +18,14 @@ SUN_VALLEY_THEMES = ("sun-valley-light", "sun-valley-dark")
 FOREST_THEMES = ("forest-light", "forest-dark")
 AZURE_THEMES = ("azure-light", "azure-dark")
 
-PATH_FOREST_THEME_DIR = Path("external-themes/forest-ttk-theme")
-PATH_FOREST_THEME_SCRIPT_LIGHT = Path("external-themes/forest-ttk-theme/forest-light.tcl")
-PATH_FOREST_THEME_SCRIPT_DARK = Path("external-themes/forest-ttk-theme/forest-dark.tcl")
-PATH_AZURE_THEME_DIR = Path("external-themes/azure-ttk-theme")
-PATH_AZURE_THEME_SCRIPT = Path("external-themes/azure-ttk-theme/azure.tcl")
+PATH_THIRD_PARTY = Path("third-party")
+
+PATH_FOREST_THEME_DIR = PATH_THIRD_PARTY / "rdbende" / "forest-ttk-theme"
+PATH_FOREST_THEME_SCRIPT_LIGHT = PATH_FOREST_THEME_DIR / "forest-light.tcl"
+PATH_FOREST_THEME_SCRIPT_DARK = PATH_FOREST_THEME_DIR / "forest-dark.tcl"
+
+PATH_AZURE_THEME_DIR = PATH_THIRD_PARTY / "rdbende" / "azure-ttk-theme"
+PATH_AZURE_THEME_SCRIPT = PATH_AZURE_THEME_DIR / "azure.tcl"
 
 
 def enable_dpi_aware() -> None:

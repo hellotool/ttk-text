@@ -1,6 +1,6 @@
 [submodule "external-themes/forest-ttk-theme"]
-	path = external-themes/forest-ttk-theme
+	path = third-party/rdbende/forest-ttk-theme
 	url = https://github.com/rdbende/Forest-ttk-theme.git
 [submodule "external-themes/azure-ttk-theme"]
-	path = external-themes/azure-ttk-theme
+	path = third-party/rdbende/azure-ttk-theme
 	url = https://github.com/rdbende/Azure-ttk-theme.git
