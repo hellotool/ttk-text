@@ -89,6 +89,22 @@ def fix_azure_ttk(style: Style) -> None:
         style.configure("ThemedText.TEntry", fieldbackground="#333333", textpadding=5)
 
 
+def get_lazy_load_themes() -> Dict[str, Path]:
+    themes: Dict[str, Path] = {}
+
+    if PATH_FOREST_THEME_SCRIPT_LIGHT.is_file():
+        themes["forest-light"] = PATH_FOREST_THEME_SCRIPT_LIGHT
+
+    if PATH_FOREST_THEME_SCRIPT_DARK.is_file():
+        themes["forest-dark"] = PATH_FOREST_THEME_SCRIPT_DARK
+
+    if PATH_AZURE_THEME_SCRIPT.is_file():
+        themes["azure-dark"] = PATH_AZURE_THEME_SCRIPT
+        themes["azure-light"] = PATH_AZURE_THEME_SCRIPT
+
+    return themes
+
+
 def create_themed_text_labelframe(parent: Misc) -> LabelFrame:
     frame = LabelFrame(parent, text="ThemedText")
     text = ThemedText(frame)
@@ -149,7 +165,70 @@ def create_themed_text_frame_tkinter_scrolledtext_labelframe(parent: Misc) -> La
     return frame
 
 
-def main() -> None:  # noqa: C901, PLR0915
+def create_official_entry_example(root: Misc, row: int, column: int):
+    entry_frame = LabelFrame(root, text="Tkinter Entry")
+    entry_frame.grid(row=row, column=column, columnspan=3, sticky="nsew", padx="4p", pady="4p")
+
+    entry = Entry(entry_frame, width=40)
+    entry.insert(1, "Hello, Entry!")
+    entry.pack(fill="x", padx="4p", pady="4p")
+
+
+def create_examples(root: Misc, row: int, column: int):
+    create_themed_text_labelframe(root).grid(
+        row=row,
+        column=column,
+        sticky="nsew",
+        padx="4p",
+        pady="4p",
+    )
+
+    create_scrolled_text_labelframe(root).grid(
+        row=row,
+        column=column + 1,
+        sticky="nsew",
+        padx="4p",
+        pady="4p",
+    )
+    create_horizontal_scrollable_scrolled_text_labelframe(root).grid(
+        row=row,
+        column=column + 2,
+        sticky="nsew",
+        padx="4p",
+        pady="4p",
+    )
+    create_themed_text_frame_labelframe(root).grid(
+        row=row + 1,
+        column=column,
+        sticky="nsew",
+        padx="4p",
+        pady="4p",
+    )
+
+    create_themed_text_frame_tkinter_scrolledtext_labelframe(root).grid(
+        row=row + 1,
+        column=column + 1,
+        sticky="nsew",
+        padx="4p",
+        pady="4p",
+    )
+
+
+def on_theme_changed(event: Event):
+    if event.widget != event.widget.winfo_toplevel():
+        return
+    # Fix theme
+    style = Style(event.widget.winfo_toplevel())
+    theme_name = style.theme_use()
+    if theme_name in SUN_VALLEY_THEMES:
+        fix_sv_ttk(style)
+    elif theme_name in FOREST_THEMES:
+        fix_forest_ttk(style)
+    elif theme_name in AZURE_THEMES:
+        fix_azure_ttk(style)
+
+
+def main() -> None:
     enable_dpi_aware()
 
     root = Tk()
@@ -167,17 +246,7 @@ def main() -> None:  # noqa: C901, PLR0915
     if sv_ttk:  # Initialize sv themes
         sv_ttk.get_theme()
 
-    lazy_load_themes: Dict[str, Path] = {}
-
-    if PATH_FOREST_THEME_SCRIPT_LIGHT.is_file():
-        lazy_load_themes["forest-light"] = PATH_FOREST_THEME_SCRIPT_LIGHT
-
-    if PATH_FOREST_THEME_SCRIPT_DARK.is_file():
-        lazy_load_themes["forest-dark"] = PATH_FOREST_THEME_SCRIPT_DARK
-
-    if PATH_AZURE_THEME_SCRIPT.is_file():
-        lazy_load_themes["azure-dark"] = PATH_AZURE_THEME_SCRIPT
-        lazy_load_themes["azure-light"] = PATH_AZURE_THEME_SCRIPT
+    lazy_load_themes = get_lazy_load_themes()
 
     theme_variable = StringVar(root, value=style.theme_use())
     theme_names = [*style.theme_names(), *lazy_load_themes.keys()]
@@ -197,18 +266,6 @@ def main() -> None:  # noqa: C901, PLR0915
 
     theme_variable.trace_add("write", on_theme_variable_changed)
 
-    def on_theme_changed(event: Event):
-        if event.widget != root:
-            return
-        # Fix theme
-        theme_name = style.theme_use()
-        if theme_name in SUN_VALLEY_THEMES:
-            fix_sv_ttk(style)
-        elif theme_name in FOREST_THEMES:
-            fix_forest_ttk(style)
-        elif theme_name in AZURE_THEMES:
-            fix_azure_ttk(style)
-
     root.bind("<<ThemeChanged>>", on_theme_changed, add=True)
 
     sizegrip = Sizegrip(root)
@@ -226,49 +283,8 @@ def main() -> None:  # noqa: C901, PLR0915
     theme_combobox = Combobox(options_frame, textvariable=theme_variable, values=theme_names, state="readonly")
     theme_combobox.grid(row=0, column=1, padx="4p", pady="4p")
 
-    entry_frame = LabelFrame(root, text="Tkinter Entry")
-    entry_frame.grid(row=1, column=0, columnspan=3, sticky="nsew", padx="4p", pady="4p")
-
-    entry = Entry(entry_frame, width=40)
-    entry.insert(1, "Hello, Entry!")
-    entry.pack(fill="x", padx="4p", pady="4p")
-    create_themed_text_labelframe(root).grid(
-        row=2,
-        column=0,
-        sticky="nsew",
-        padx="4p",
-        pady="4p",
-    )
-
-    create_scrolled_text_labelframe(root).grid(
-        row=2,
-        column=1,
-        sticky="nsew",
-        padx="4p",
-        pady="4p",
-    )
-    create_horizontal_scrollable_scrolled_text_labelframe(root).grid(
-        row=2,
-        column=2,
-        sticky="nsew",
-        padx="4p",
-        pady="4p",
-    )
-    create_themed_text_frame_labelframe(root).grid(
-        row=3,
-        column=0,
-        sticky="nsew",
-        padx="4p",
-        pady="4p",
-    )
-
-    create_themed_text_frame_tkinter_scrolledtext_labelframe(root).grid(
-        row=3,
-        column=1,
-        sticky="nsew",
-        padx="4p",
-        pady="4p",
-    )
+    create_official_entry_example(root, row=1, column=0)
+    create_examples(root, row=2, column=0)
 
     root.mainloop()
 
