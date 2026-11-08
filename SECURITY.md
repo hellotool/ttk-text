@@ -6,6 +6,7 @@
 > [!WARNING]
 >
 > **THIS PROJECT IS PROVIDED "AS IS", WITHOUT ANY SECURITY GUARANTEES. ALL RISKS ASSOCIATED WITH USING THIS SOFTWARE ARE ASSUMED BY YOU.**
+>
 > To reduce maintenance costs, this project **DOES NOT PROMISE** any response time. You should assess the risks yourself and decide whether to use it.
 
 ## Reporting a Vulnerability
