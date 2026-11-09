@@ -1,21 +1,25 @@
 {
   "explorer.fileNesting.patterns": {
-    "pyproject.toml": "uv.lock, .python-version, .editorconfig, rumdl.toml, pytest.toml, pyrightconfig.json, ruff.toml, uv.toml, babel.toml, poe_tasks.toml",
+    "pyproject.toml": "uv.lock, .python-version, .editorconfig, pyrightconfig.json, *.toml",
     "README.md": "README_*.md",
     "*": "${basename}.*.${extname}"
   },
   "[python]": {
     "editor.defaultFormatter": "charliermarsh.ruff",
-    "editor.formatOnSave": true
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "rvben.rumdl",
+  },
+  "[toml]": {
+    "editor.defaultFormatter": "tombi-toml.tombi"
+  },
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "always"
   },
   "python.testing.unittestEnabled": false,
   "python.testing.pytestEnabled": true,
   "files.eol": "\n",
   "rumdl.enable": true,
   "rumdl.configPath": "rumdl.toml",
-  "evenBetterToml.schema.associations": {
-    ".*/ruff.toml": "https://json.schemastore.org/ruff.json",
-    ".*/rumdl.toml": "https://json.schemastore.org/rumdl.json",
-    ".*/uv.toml": "https://json.schemastore.org/uv.json",
-  },
 }

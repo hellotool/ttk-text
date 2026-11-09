@@ -2,64 +2,68 @@
 name = "ttk-text"
 version = "0.3.4"
 description = "Themed Tkinter Text widget with modern styling support."
-authors = [{ name = "Jesse205", email = "jesse205@qq.com" }]
-maintainers = [{ name = "Jesse205", email = "jesse205@qq.com" }]
-dependencies = []
-requires-python = ">=3.8"
 readme = "README_pypi.md"
+requires-python = ">=3.8"
 license = "MIT"
 license-files = ["LICENSE"]
+authors = [{ name = "Jesse205", email = "jesse205@qq.com" }]
+maintainers = [{ name = "Jesse205", email = "jesse205@qq.com" }]
+keywords = ["tk", "tk-text", "tkinter", "tkinter-text", "ttk", "ttk-text"]
 classifiers = [
-    "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3 :: Only",
-    "Programming Language :: Python :: 3.8",
-    "Programming Language :: Python :: 3.9",
-    "Programming Language :: Python :: 3.10",
-    "Programming Language :: Python :: 3.11",
-    "Programming Language :: Python :: 3.12",
-    "Programming Language :: Python :: 3.13",
-    "Programming Language :: Python :: 3.14",
-    "Operating System :: Microsoft :: Windows",
-    "Operating System :: Microsoft :: Windows :: Windows 11",
-    "Operating System :: Microsoft :: Windows :: Windows 10",
-    "Operating System :: Microsoft :: Windows :: Windows 8.1",
-    "Operating System :: Microsoft :: Windows :: Windows 8",
-    "Operating System :: Microsoft :: Windows :: Windows 7",
-    "Topic :: Software Development :: Libraries :: Python Modules",
-    "Development Status :: 2 - Pre-Alpha",
+  "Development Status :: 2 - Pre-Alpha",
+  "Operating System :: Microsoft :: Windows",
+  "Operating System :: Microsoft :: Windows :: Windows 7",
+  "Operating System :: Microsoft :: Windows :: Windows 8",
+  "Operating System :: Microsoft :: Windows :: Windows 8.1",
+  "Operating System :: Microsoft :: Windows :: Windows 10",
+  "Operating System :: Microsoft :: Windows :: Windows 11",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
+  "Topic :: Software Development :: Libraries :: Python Modules",
 ]
-keywords = ["ttk", "ttk-text", "tkinter", "tkinter-text", "tk", "tk-text"]
+dependencies = []
 import-names = ["ttk_text"]
 
 [project.urls]
+Changelog = "https://github.com/hellotool/ttk-text/releases"
 Repository = "https://github.com/hellotool/ttk-text"
 Tracker = "https://github.com/hellotool/ttk-text/issues"
-Changelog = "https://github.com/hellotool/ttk-text/releases"
 
 [dependency-groups]
-test = [
-    "pytest>=8.3.5; python_version < '3.9'",
-    "pytest>=8.4.2; python_version == '3.9'",
-    "pytest>=9.0.3; python_version >= '3.10'",
-]
-example = ["sv-ttk>=2.6.0"]
-lint = ["pyright>=1.1.414", "ruff>=0.17.4"]
-docs = ["rumdl>=0.3.2; python_version >= '3.9'"]
 dev = [
-    { include-group = "lint" },
-    { include-group = "example" },
-    { include-group = "test" },
-    { include-group = "docs" },
+  { include-group = "docs" },
+  { include-group = "example" },
+  { include-group = "lint" },
+  { include-group = "test" },
+]
+docs = ["rumdl>=0.3.2; python_version >= '3.9'"]
+example = ["sv-ttk>=2.6.0"]
+lint = [
+  "pyright>=1.1.414",
+  "ruff>=0.17.4",
+  "tombi>=1.11.1 ; python_full_version >= '3.10'",
+]
+test = [
+  "pytest>=8.3.5; python_version < '3.9'",
+  "pytest>=8.4.2; python_version == '3.9'",
+  "pytest>=9.0.3; python_version >= '3.10'",
 ]
 
 [build-system]
 requires = ["uv_build>=0.13.7,<0.14"]
 build-backend = "uv_build"
 
-[tool.uv]
-required-version = ">=0.13.7"
-
 [tool.pytest.ini_options]
-testpaths = ["tests"]
 log_cli = true
 log_cli_level = "INFO"
+testpaths = ["tests"]
+
+[tool.uv]
+required-version = ">=0.13.7"

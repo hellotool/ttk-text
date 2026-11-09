@@ -1,9 +1,10 @@
 {
-    "recommendations": [
-        "davidanson.vscode-markdownlint",
-        "ms-python.debugpy",
-        "ms-python.python",
-        "ms-python.vscode-pylance",
-        "charliermarsh.ruff"
-    ]
+  "recommendations": [
+    "ms-python.debugpy",
+    "ms-python.python",
+    "ms-python.vscode-pylance",
+    "charliermarsh.ruff",
+    "tombi-toml.tombi",
+    "rvben.rumdl"
+  ]
 }
