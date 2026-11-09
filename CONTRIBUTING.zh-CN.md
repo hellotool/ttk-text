@@ -76,19 +76,7 @@ uv run example.py
 
 ### 代码规范
 
-#### Python 代码（`.py`）
-
-- 函数参数必须声明类型注解。
-- 单行最大长度 120 字符。
-- 其他情况遵循 [PEP 8][pep-0008]。
-
-#### Markdown 文档（`.md`）
-
-- 不限制单行最大长度。
-- 具体规则参考 `.markdownlint.json`。
-- 其他情况遵循 [Markdownlint][markdownlint-repository-github]。
-
-更多细节请参考 `.editorconfig`。
+您可以尽情地编写代码，`uv run poe fix` 命令和您的 IDE 会帮助您检查并修复一些小问题。
 
 ### Git 提交规范
 
@@ -97,12 +85,9 @@ uv run example.py
 [issues-github]: https://github.com/hellotool/ttk-text/issues
 [issues-atomgit]: https://atomgit.com/hellotool/ttk-text/issues
 
-[markdownlint-repository-github]: https://github.com/DavidAnson/markdownlint
 [conventionalcommits-homepage]: https://www.conventionalcommits.org/zh-hans/v1.0.0/
 [uv-homepage]: https://docs.astral.sh/uv/zh/
 [git-homepage]: https://git-scm.com/
 
 [how-to-contribute-github-opensource-guide]: https://opensource.guide/zh-hans/how-to-contribute/
 [participating-gitee-opensource-guide]: https://gitee.com/opensource-guide/guide/participating/roles.html
-
-[pep-0008]: https://peps.python.org/pep-0008/

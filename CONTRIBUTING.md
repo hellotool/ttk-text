@@ -76,19 +76,7 @@ uv run example.py
 
 ### Code Standards
 
-#### Python Code (`.py`)
-
-- Function parameters must have type annotations.
-- Maximum line length is 120 characters.
-- Other cases should follow [PEP 8][pep-0008].
-
-#### Markdown Documentation (`.md`)
-
-- No restriction on maximum line length.
-- For details, refer to `.markdownlint.json`.
-- Other cases should follow [Markdownlint][markdownlint-repository-github].
-
-For more details, please refer to `.editorconfig`.
+You can write code to your heart's content; the `uv run poe fix` command and your IDE will help you check and fix minor issues.
 
 ### Git Commit Standards
 
@@ -97,12 +85,9 @@ Follow [Conventional Commits][conventionalcommits-homepage].
 [issues-github]: https://github.com/hellotool/ttk-text/issues
 [issues-atomgit]: https://atomgit.com/hellotool/ttk-text/issues
 
-[markdownlint-repository-github]: https://github.com/DavidAnson/markdownlint
 [conventionalcommits-homepage]: https://www.conventionalcommits.org/en/v1.0.0/
 [uv-homepage]: https://docs.astral.sh/uv/
 [git-homepage]: https://git-scm.com/
 
 [how-to-contribute-github-opensource-guide]: https://opensource.guide/how-to-contribute/
 [participating-gitee-opensource-guide]: https://gitee.com/opensource-guide/guide/participating/roles.html
-
-[pep-0008]: https://peps.python.org/pep-0008/
